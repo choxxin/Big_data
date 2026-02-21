@@ -26,7 +26,7 @@ df.show(1 , vertical=True)
 #shows the col ex a,b,c,d
 df.columns
 df.printSchema()
-#Show the summary of the DataFrame
+#Show the summary of the DataFrame (selects helps to show the specific col summary)
 df.select("a", "b", "c").describe().show()
 df.a
 type(df.a)     
