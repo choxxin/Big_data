@@ -12,6 +12,7 @@ df = spark.createDataFrame([
     ['red', 'banana', 7, 70], ['red', 'grape', 8, 80]], schema=['color', 'fruit', 'v1', 'v2'])
 df.show()
 #typical groub by on basis of color and show 
+print("GROUP BY COLOR")
 df.groupby('color').avg().show()
 
 

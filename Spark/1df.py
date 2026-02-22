@@ -53,5 +53,6 @@ df.show()
 #Filter 
 df.filter(df.a == 1).show()  #Takes condition and show specific rows
 
+
 # Stop Spark session at the endß
 spark.stop()
