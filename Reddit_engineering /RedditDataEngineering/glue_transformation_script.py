@@ -35,7 +35,7 @@ Rules = [
 ]
 """
 
-# Read raw CSV from S3
+# Read raw CSV from S3 - processes ALL CSV files in the bucket
 print("Reading raw data from S3...")
 raw_data = glueContext.create_dynamic_frame.from_options(
     format_options={
@@ -47,7 +47,8 @@ raw_data = glueContext.create_dynamic_frame.from_options(
     connection_type="s3", 
     format="csv", 
     connection_options={
-        "paths": ["s3://ansh-reddit-raw/reddit_20231022.csv"]
+        "paths": ["s3://ansh-reddit-raw/"],
+        "recurse": True  # Process all CSV files in bucket
     }, 
     transformation_ctx="raw_data"
 )
